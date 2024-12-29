@@ -1,0 +1,24 @@
+第三張：
+
+@startuml
+left to right direction
+
+actor "ATM Technician" as A1 #green
+
+rectangle "ATM System" {
+    usecase "Maintenance" as UC1
+    usecase "Repair" as UC2
+    usecase "Replenishing" as UC3
+    usecase "Upgrades" as UC4
+    usecase "Diagnostics" as UC5
+}
+
+A1 --> UC1
+A1 --> UC2
+
+UC1 ..> UC3 : <<include>>
+UC1 ..> UC4 : <<include>>
+UC1 ..> UC5 : <<include>>
+
+UC2 ..> UC5 : <<include>>
+@enduml
