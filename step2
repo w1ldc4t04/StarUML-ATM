@@ -1,0 +1,29 @@
+@startuml
+left to right direction
+
+actor User as A1 #green
+actor BankingSystem as A2 #green
+
+rectangle "ATM System" {
+    usecase "Enter card, user name and PIN" as UC1
+    usecase "Invalid ID" as UC2
+    usecase "Check Balance" as UC3
+    usecase "Withdrawal of Money" as UC4
+    usecase "Deposite Money" as UC5
+    usecase "Request for mini statement" as UC6
+}
+
+A1 --> UC1
+A1 --> UC3
+A1 --> UC4
+A1 --> UC5
+A1 --> UC6
+
+UC1 ..> UC2 : <<extend>>
+
+A2 --> UC3
+A2 --> UC4
+A2 --> UC5
+A2 --> UC6
+
+@enduml
